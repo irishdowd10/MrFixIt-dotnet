@@ -1,16 +1,17 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.26430.16
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{707448DA-AB0E-452C-82FA-336A6811318E}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{8F967F70-E920-4D7B-814A-07442B5F0AC7}"
 	ProjectSection(SolutionItems) = preProject
+		global.json = global.json
 		README.md = README.md
 	EndProjectSection
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MrFixIt", "src\MrFixIt\MrFixIt.csproj", "{0FC86F4A-31BC-4EB4-A6F5-5B85C3A5B5CA}"
+Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "MrFixIt", "src\MrFixIt\MrFixIt.xproj", "{0FC86F4A-31BC-4EB4-A6F5-5B85C3A5B5CA}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

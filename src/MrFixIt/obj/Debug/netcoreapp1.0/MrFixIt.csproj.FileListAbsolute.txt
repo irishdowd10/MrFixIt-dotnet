@@ -1,0 +1,9 @@
+C:\Users\JohnDowd\Desktop\MrFixIt-dotnet\src\MrFixIt\bin\Debug\netcoreapp1.0\MrFixIt.deps.json
+C:\Users\JohnDowd\Desktop\MrFixIt-dotnet\src\MrFixIt\bin\Debug\netcoreapp1.0\MrFixIt.runtimeconfig.json
+C:\Users\JohnDowd\Desktop\MrFixIt-dotnet\src\MrFixIt\bin\Debug\netcoreapp1.0\MrFixIt.runtimeconfig.dev.json
+C:\Users\JohnDowd\Desktop\MrFixIt-dotnet\src\MrFixIt\bin\Debug\netcoreapp1.0\MrFixIt.dll
+C:\Users\JohnDowd\Desktop\MrFixIt-dotnet\src\MrFixIt\bin\Debug\netcoreapp1.0\MrFixIt.pdb
+C:\Users\JohnDowd\Desktop\MrFixIt-dotnet\src\MrFixIt\obj\Debug\netcoreapp1.0\MrFixIt.csprojResolveAssemblyReference.cache
+C:\Users\JohnDowd\Desktop\MrFixIt-dotnet\src\MrFixIt\obj\Debug\netcoreapp1.0\MrFixIt.AssemblyInfo.cs
+C:\Users\JohnDowd\Desktop\MrFixIt-dotnet\src\MrFixIt\obj\Debug\netcoreapp1.0\MrFixIt.dll
+C:\Users\JohnDowd\Desktop\MrFixIt-dotnet\src\MrFixIt\obj\Debug\netcoreapp1.0\MrFixIt.pdb
