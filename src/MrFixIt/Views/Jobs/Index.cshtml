@@ -4,28 +4,64 @@
 @{
 }
 <div class="text-center">
-    <h3>Our Current Jobs</h3>
-    @Html.ActionLink("Add a new job", "Create")
+	<h3>Our Current Jobs</h3>
+	@Html.ActionLink("Add a new job", "Create")
 </div>
 @foreach (var Job in Model)
 {
-    <ul>
-        <li>@Job.Title</li>
-        <ul>
-            <li>@Job.Description</li>
-        </ul>
-        @if (Job.Worker == null)
-        {
-        <li class="btn">This job is unclaimed. @Html.ActionLink("Claim This Job", "Claim", new { @text = @Job.Title, id = Job.JobId })</li>
-        }
-        else
-        {
-            <li class="btn">This Job is claimed by @Job.Worker.FirstName @Job.Worker.LastName</li>
+	<ul>
+		<li>@Job.Title</li>
 
-        }
-    </ul>
+		<li>@Job.Description</li>
+	</ul>
+
+	@if (Job.Worker == null)
+	{
+		<h4>Make sure to complete your worker profile to claim jobs!</h4>
+
+			<ul>
+				<li class="btn">
+					This job is unclaimed.
+
+					<button id="@Job.JobId" type="button" class="claim-job">Claim job</button>
+
+				</li>
+			</ul>
+
+			<div id="claim-job-display"></div>
+
+	}
+	else
+	{
+		<ul>
+			<li class="btn">This Job is claimed by @Job.Worker.FirstName @Job.Worker.LastName</li>
+		</ul>
+
+	}
 
 
-    <hr />
+	<hr />
 }
+
+	<script type="text/javascript">
+        $(document).ready(function () {
+            $(".claim-job").click(function () {
+                console.log(this.id);
+                var jobMod = this.id
+                    $.ajax({
+                        type: 'GET',
+                        data: { id: jobMod },
+                        dataType: 'json',
+                    contentType: 'application/json',
+                    url: '@Url.Action("ClaimJobCtrl")',
+                        success: function (result) {
+                            var resultString = "<h4> Perfect! " + result + ", You have claimed this job </h4>";
+                        $('#claim-job-display').html(resultString);
+                    }
+                });
+            });
+        });
+	</script>
+
+
 

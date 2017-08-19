@@ -41,5 +41,49 @@ namespace MrFixIt.Controllers
             db.SaveChanges();
             return RedirectToAction("Index");
         }
-    }
+
+		public IActionResult changeToUnavail(int id)
+		{
+			Worker thisWorker = db.Workers.FirstOrDefault(w => w.WorkerId == id);
+			thisWorker.Avaliable = false;
+			db.Entry(thisWorker).State = EntityState.Modified;
+			db.SaveChanges();
+			return RedirectToAction("Index");
+		}
+
+		public IActionResult changeToAvail(int id)
+		{
+			Worker thisWorker = db.Workers.FirstOrDefault(w => w.WorkerId == id);
+			thisWorker.Avaliable = true;
+			db.Entry(thisWorker).State = EntityState.Modified;
+			db.SaveChanges();
+			return RedirectToAction("Index");
+		}
+
+		public IActionResult pendingToTrue(int id)
+		{
+			Job thisJob = db.Jobs.FirstOrDefault(j => j.JobId == id);
+			thisJob.Pending = true;
+			db.Entry(thisJob).State = EntityState.Modified;
+			db.SaveChanges();
+			return Json(thisJob);
+		}
+
+		public IActionResult pendingToFalse(int id)
+		{
+			Job thisJob = db.Jobs.FirstOrDefault(j => j.JobId == id);
+			thisJob.Pending = false;
+			db.Entry(thisJob).State = EntityState.Modified;
+			db.SaveChanges();
+			return Json(thisJob);
+		}
+		public IActionResult complToTrue(int id)
+		{
+			Job thisJob = db.Jobs.FirstOrDefault(j => j.JobId == id);
+			thisJob.Completed = true;
+			db.Entry(thisJob).State = EntityState.Modified;
+			db.SaveChanges();
+			return Json(thisJob);
+		}
+	}
 }
