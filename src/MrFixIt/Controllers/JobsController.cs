@@ -7,6 +7,7 @@ using MrFixIt.Models;
 using Microsoft.EntityFrameworkCore;
 using System.Security.Claims;
 using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Authorization;
 
 // For more information on enabling MVC for empty projects, visit http://go.microsoft.com/fwlink/?LinkID=397860
 namespace MrFixIt.Controllers
@@ -26,7 +27,7 @@ namespace MrFixIt.Controllers
 			_signInManager = signInManager;
 			_db = db;
 		}
-
+		[Authorize]
 		public async Task<IActionResult> Index()
 		{
 			var userId = this.User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
@@ -36,13 +37,14 @@ namespace MrFixIt.Controllers
 
 			return View(inclWorkerWithJob);
 		}
-
+		[Authorize]
 		public IActionResult Create()
 		{
 			return View();
 		}
 
 		[HttpPost]
+		[Authorize]
 		public IActionResult Create(Job job)
 		{
 			db.Jobs.Add(job);
@@ -50,6 +52,7 @@ namespace MrFixIt.Controllers
 			return RedirectToAction("Index");
 		}
 
+		[Authorize]
 		public IActionResult ClaimJobCtrl(int id)
 		{
 
